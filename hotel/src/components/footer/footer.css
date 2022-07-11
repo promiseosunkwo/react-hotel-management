@@ -1,0 +1,103 @@
+/* ===================================
+	14. Footer
+=================================== */
+footer {
+	background-color: #121212;
+	position: relative;
+}
+.footer-top .about p {
+	color: #6c7f93;
+}
+.footer-top .social {
+	padding: 30px 0;
+}
+.footer-top .social i {
+	color: #6c7f93;
+	font-size: 20px;
+	margin-right: 5px;
+	cursor: pointer;
+}
+.footer-top .social i:hover {
+	color: #5f80c4;
+}
+.footer-top .title {
+	padding: 0;
+}
+.footer-top .title h3 {
+	text-align: left;
+	color: #fff;
+	padding: 0;
+	font-size: 22px;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+/* footer social */
+.footer-social a {
+	color: #CCC;
+	margin-right: 6px;
+	font-size: 20px;
+    text-decoration: none;
+}
+/* recent link */
+.footer-link li {
+	padding-bottom: 10px;
+}
+.footer-link li:last-child {
+	padding-bottom: 0;
+}
+.footer-link li a {
+	color: #CCC;
+    text-decoration: none;
+}
+.footer-link li a:hover {
+	color: #fff;
+}
+/* recent post */
+.footer-recent-post-item {
+	border-bottom: 1px solid rgba(255,255,255,0.1);
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+}
+.footer-recent-post-item:last-child {
+	border-bottom: 0px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+.footer-recent-post-item a {
+	color: #CCC;
+    text-decoration: none;
+}
+.footer-recent-post-item p {
+	margin-bottom: 6px !important;
+}
+.footer-recent-post-item a:hover {
+	color: #fff;
+}
+/* footer newsletter form */
+.footer-newsletter-form input {
+	padding: 10px;
+	width: 100%;
+	height: 50px;
+	background: transparent;
+	border: 1px solid rgba(255,255,255,0.1);
+	color: #6c7f93;
+}
+.footer-newsletter-form button {
+	width: 100%;
+	height: 50px;
+	background-color: rgb(220, 66, 66);
+	color: #fff;
+	text-decoration: none;
+	border: 0px;
+	text-transform: uppercase;
+	margin-top: 6px;
+}
+/* copyright */
+.copyright {
+	border-top: 1px solid rgba(255,255,255,0.1);
+	padding: 10px 0px;
+}
+
+.icon{
+    color:white;
+}

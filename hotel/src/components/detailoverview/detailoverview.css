@@ -1,0 +1,98 @@
+/* ===================================
+	17. Detail page
+=================================== */
+.detail-page-gallery-carousel .owl-nav {
+	width: 100%;
+	margin-top: 0px;
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 0px;
+}
+.detail-page-gallery-carousel .owl-nav .owl-prev {
+	float: left;
+}
+.detail-page-gallery-carousel .owl-nav .owl-next {
+	float: right;
+}
+.detail-page-gallery-carousel .owl-nav .owl-prev, .detail-page-gallery-carousel .owl-nav .owl-next {
+	background-color: rgba(0,0,0,0.6) !important;
+	border-radius: 0px;
+	color: #fff !important;
+	line-height: 30px;
+	height: 30px;
+	width: 30px;
+}
+.detail-page-gallery-carousel .owl-nav .owl-prev:hover, .detail-page-gallery-carousel .owl-nav .owl-next:hover {
+	background-color: #7dc146 !important;
+	color: #fff !important;
+}
+/* .detail-tabs {
+	border: 1px solid #d9d9d9;
+}
+.detail-tabs .nav-pills .nav-link {
+	background-color: #d9d9d9;
+	border-top: 2px solid #d9d9d9;
+	border-left: 0px;
+	border-right: 0px;
+	border-bottom: 0px;
+	border-radius: 0px;
+	margin-right: 1px;
+	color: #333;
+	font-size: 14px;
+} */
+/* .detail-tabs .nav-pills .nav-item:last-child .nav-link {
+	margin-right: 0px;
+}
+.detail-tabs .nav-pills .nav-link:hover {
+	border-top: 2px solid #cccbcb;
+}
+.detail-tabs .nav-pills .nav-link.active {
+	background-color: #31b675;
+	border-top: 2px solid #31b675;
+	color: #fff;
+} */
+/* ameneties */
+.ameneties-list li {
+	padding-bottom: 8px;
+}
+.ameneties-list li i {
+	color: #31b675;
+}
+/* review */
+.review-item {
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+}
+.review-item:last-child {
+	border-bottom: 0px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+.review-item h5 {
+	position: relative;
+	margin-bottom: 8px;
+}
+.review-item h5 span {
+	font-size: 12px;
+	color: #31b675;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+}
+.review-item h5 span a {
+	color: #31b675;
+	font-style: italic;
+	font-weight: 600;
+}
+
+/* .tab-content{
+	color: white;
+} */
+
+.coloredTab{
+	color: white;
+}

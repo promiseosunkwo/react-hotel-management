@@ -1,0 +1,42 @@
+/* ===================================
+	15. Inner banner
+=================================== */
+.inner-banner-bg {
+	position: relative;
+	background-image: url(../../../public/img/bg/inner-banner-bg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+	z-index: 0;
+}
+
+.inner-banner a{
+	text-decoration: none;
+}
+
+.inner-banner-bg:after {
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.7);
+	left: 0px;
+	top: 0px;
+	z-index: -1;
+}
+.page-title h1 {
+	color: #fff;
+	font-size: 38px;
+}
+.inner-banner .breadcrumb {
+	background-color: rgba(0,0,0,0.7);
+	display: inline-block;
+	/* float: right; */
+	border-radius: 0px;
+}
+.inner-banner .breadcrumb li {
+	float: left;
+}
+.inner-banner .breadcrumb li a {
+	color: rgb(220, 66, 66);
+}

@@ -1,0 +1,313 @@
+/* ===================================
+	16. Listing page
+=================================== */
+.listing-page {
+	background-color: #f7f7f7;
+}
+.list-box {
+	border: 1px solid #eee;
+	background-color: #fff;
+}
+.list-box:hover {
+	border: 1px solid #003B65;
+}
+.list-box .list-box-content {
+	float: none;
+	width: auto;
+	overflow: hidden;
+}
+.list-box-content {
+	padding: 18px 20px 20px;
+	float: left;
+	width: 100%;
+}
+.list-box-title {
+	float: left;
+	width: 100%;
+	position: relative;
+	margin-bottom: 4px;
+	padding-bottom: 4px;
+}
+.list-box-title h3 {
+	margin: 0;
+	font-size: 20px;
+	line-height: 1.2;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.list-box-title h3 span {
+	display: block;
+	margin-top: 5px;
+	font-size: 20px;
+	font-weight: 700;
+	color: #003B65;
+}
+.list-box-title h3 span em {
+	color: #767676;
+	font-size: 13px;
+	font-weight: 400;
+	font-style: normal;
+	display: inline-block;
+	line-height: inherit;
+	text-transform: lowercase;
+}
+.list-box-rating {
+	float: left;
+	width: 100%;
+}
+.at-stars, .at-stars span {
+	width: 85px;
+	height: 16px;
+	color: #ff8500;
+	float: left;
+	line-height: 16px;
+	position: relative;
+}
+.list-box-rating em {
+	float: left;
+	margin-left: 10px;
+	font-size: 13px;
+	font-style: normal;
+	line-height: 16px;
+}
+.hotel-featured {
+	float: left;
+	width: 100%;
+	list-style: none;
+	margin-top: 15px;
+	line-height: 14px;
+}
+.hotel-featured li {
+	float: left;
+	width: 50%;
+	line-height: inherit;
+	list-style-type: none;
+}
+.hotel-featured li:nth-child(1), .hotel-featured li:nth-child(2) {
+	padding-bottom: 18px;
+}
+.hotel-featured li span {
+	display: block;
+	font-size: 14px;
+	line-height: inherit;
+}
+.list-box-title address {
+	margin: 0;
+	float: left;
+	font-size: 12px;
+	font-style: normal;
+	line-height: 20px;
+	width: 90%;
+}
+.list-box .list-box-carousel {
+	width: 285px;
+	float: left;
+	display: block;
+}
+.list-box-img {
+	width: 285px;
+	float: left;
+	display: block;
+	position: relative;
+}
+.list-box-img .form-check {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background-color: #fff;
+	padding: 10px 10px 10px 30px;
+	z-index: 11;
+	font-size: 14px;
+}
+.list-box-carousel .owl-nav {
+	width: 100%;
+	margin-top: 0px;
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 0px;
+}
+.list-box-carousel .owl-nav .owl-prev {
+	float: left;
+}
+.list-box-carousel .owl-nav .owl-next {
+	float: right;
+}
+.list-box-carousel .owl-nav .owl-prev, .list-box-carousel .owl-nav .owl-next {
+	background-color: rgba(0,0,0,0.6) !important;
+	border-radius: 0px;
+	color: #fff !important;
+	line-height: 30px;
+	height: 30px;
+	width: 30px;
+}
+.list-box-carousel .owl-nav .owl-prev:hover, .list-box-carousel .owl-nav .owl-next:hover {
+	background-color: #003B65 !important;
+	color: #fff !important;
+}
+/* filter widget */
+/* .filter-title-widget{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} */
+.filter-widget {
+	border: 1px solid #dbdbdb;
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 0px;
+}
+.filter-title-widget h3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+	font-size: 18px;
+	/* position: relative; */
+	font-weight: 600;
+	color: #235685;
+}
+.filter-title-widget h3:before {
+	position: absolute;
+	content: "";
+	width: 2px;
+	height: 100%;
+	background-color: #235685;
+	top: -2px;
+	left: -20px;
+}
+/* filter accordion */
+.filter-accordion .card {
+	overflow: visible;
+	border: 0px;
+}
+.filter-accordion .card-header, .filter-accordion .card-header .btn {
+	padding: 0px;
+	text-decoration: none;
+}
+.filter-accordion .card-header {
+	border-bottom: 0px;
+	background-color: transparent;
+}
+.filter-accordion .card-header h2 {
+	line-height: 20px;
+}
+.filter-accordion .card .card-body {
+	padding: 0px;
+}
+.filter-accordion .card .card-header .btn .sidebarMinusIcon {
+	display: inline-block;
+	color: #235685;
+	padding-top: 6px;
+	font-size: 24px;
+}
+.filter-accordion .card-header .btn.collapsed .sidebarMinusIcon {
+	display: none;
+}
+.filter-accordion .card .card-header .btn.collapsed .sidebarPlusIcon {
+	display: inline-block;
+	font-size: 14px;
+	padding-top: 6px;
+	color: #235685;
+}
+.filter-accordion .card .card-header .btn .sidebarPlusIcon {
+	display: none;
+}
+.select-all li {
+	position: relative;
+}
+.select-all li a {
+	color: #333;
+}
+.select-all li:after {
+	position: absolute;
+	content: "";
+	background-color: #c6c6c6;
+	width: 1px;
+	transform: translateY(-50%);
+	top: 50%;
+	right: -6px;
+	height: 10px;
+}
+.select-all li:last-child:after {
+	display: none;
+}
+/* filter checkbox widget */
+.filter-checkbox-widget .form-check {
+	line-height: 23px;
+	margin-bottom: 6px;
+}
+.filter-checkbox-widget .form-check:last-child {
+	margin-bottom: 0px;
+}
+.filter-checkbox-widget .form-check label {
+	color: #000;
+}
+/* filter select widget */
+.filter-accordion select {
+	border-radius: 0px;
+	font-size: 12px;
+}
+/* help us */
+.help-us {
+	background-color: #003B65;
+	padding: 25px;
+}
+.help-us h3 {
+	color: #fff;
+	font-weight: 600;
+	font-size: 26px;
+	margin-bottom: 6px;
+}
+.help-us p {
+	color: #fff;
+}
+/* side about */
+.side-about {
+	background-image: url(../../../public/img/bg/side-about-bg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	z-index: 0;
+	padding: 15px;
+	text-align: center;
+}
+.side-about:before {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: -1;
+	background-color: rgba(0,0,0,0.7);
+	content: "";
+	width: 100%;
+	height: 100%;
+}
+/* pagination */
+.pagination-box .page-item:first-child .page-link, .pagination-box .page-item:last-child .page-link {
+	border-radius: 0px;
+}
+.pagination-box .page-link {
+	color: #333;
+}
+.pagination-box .page-item.active .page-link {
+	background-color: #003B65;
+	border-color: #003B65;
+}
+
+.listing-page a{
+    text-decoration: none;
+}
+
+/* .starIcon{
+    background-color: #31b675;
+    font-size: 5px;
+    size: 5px;
+} */
+
+/* for the carousel list box */
+@media (max-width: 767px) {
+    .list-box .list-box-carousel {
+        width: 100%;
+    }
+}

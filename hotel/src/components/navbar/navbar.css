@@ -55,7 +55,7 @@
 }
 .header-navigation .navbar-nav .nav-link:hover, .header-navigation .navbar-nav li.active .nav-link {
 	background-color: #000;
-	color: rgb(220, 66, 66);
+	color: #003B65;
 }
 .header-navigation .navbar-nav .nav-item.dropdown .dropdown-menu {
 	margin: 0px;
@@ -135,7 +135,7 @@
 }
 
 .header-right-link ul li:last-child {
-	background-color:  rgb(220, 66, 66);
+	background-color:  #003B65;
 	/* background-color: #31b675; */
 	padding: 5px;
 }

@@ -30,13 +30,13 @@
 }
 .popular-hotel-box:hover .black-bg {
 	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#10b098+29,31b675+100&0+30,0.7+98 */
-	background: -moz-linear-gradient(top, rgba(220, 66, 66, 0.147) 29%, rgba(220, 66, 66, 0.147) 30%, rgba(220, 66, 66, 0.147) 98%, rgba(220, 66, 66, 0.147) 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top, rgba(220, 66, 66, 0.115) 29%, rgba(220, 66, 66, 0.099) 30%, rgba(220, 66, 66, 0.093) 98%, rgba(220, 66, 66, 0.121) 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, rgba(220, 66, 66, 0.147) 29%, rgba(220, 66, 66, 0.201) 30%, rgba(220, 66, 66, 0.179) 98%, rgba(220, 66, 66, 0.152)100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background: -moz-linear-gradient(top, #003b6542 29%, #003b6547 30%, #003b654d 98%, rgba(220, 66, 66, 0.147) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #003b654b 29%, #003b6553 30%, #003b6559 98%, rgba(220, 66, 66, 0.121) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #003b654e 29%, #003b6555 30%, #003b6557 98%, rgba(220, 66, 66, 0.152)100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0010b098', endColorstr='#b331b675', GradientType=0 ); /* IE6-9 */
 }
 .popular-hotel-box:hover {
-	border: 1px solid rgb(220, 66, 66);
+	border: 1px solid #003B65;
 }
 .popular-hotel-box .black-bg a {
 	position: absolute;
@@ -48,7 +48,7 @@
 }
 .popular-hotel-box h4 a {
 	/* color: #31b675; */
-    color: rgb(220, 66, 66);
+    color: #003B65;
 	text-decoration: none;
 	padding-bottom: 6px;
 	position: relative;
@@ -83,7 +83,7 @@
 	font-size: 20px;
 	font-weight: 600;
 	/* color: #31b675; */
-    color: rgb(220, 66, 66);
+    color: #003B65;
 }
 .popular-hotel-box .price span {
 	font-weight: 300;
@@ -110,5 +110,5 @@
 .popular-hotel-carousel .owl-nav .owl-prev:hover, .popular-hotel-carousel .owl-nav .owl-next:hover {
 	color: #fff !important;
 	/* background-color: #31b675 !important; */
-    background-color: rgb(220, 66, 66) !important;
+    background-color: #003B65 !important;
 }

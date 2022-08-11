@@ -11,22 +11,40 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';
 import { useState } from "react";
-import Modal from 'react-bootstrap/Modal'
+// import Modal from 'react-bootstrap/Modal'
 
-import OwlCarousel from 'react-owl-carousel';  
-import 'owl.carousel/dist/assets/owl.carousel.css';  
-import 'owl.carousel/dist/assets/owl.theme.default.css'; 
+// import OwlCarousel from 'react-owl-carousel';  
+// import 'owl.carousel/dist/assets/owl.carousel.css';  
+// import 'owl.carousel/dist/assets/owl.theme.default.css'; 
+import { useLocation } from "react-router-dom";
 
-
+import { format } from 'date-fns';
+import { DateRange } from 'react-date-range';
+import 'react-date-range/dist/styles.css'; // main css file
+import 'react-date-range/dist/theme/default.css'; // theme css file
+import SearchList from "../searchlist/SearchList";
 
 const Listings = () => {
+
+const location = useLocation();
 
 const [showHotels, setShowHotels] = useState(true);
 const [showPrice, setShowPrice] = useState(true);
 
 const [showModal, setShowModal] = useState(false);
 
+const [destination, setDestination] = useState(location.state.destination);
+const [adult, setAdult] = useState(location.state.adult);
+const [children, setChildren] = useState(location.state.children);
+const [rooms, setRooms] = useState(location.state.rooms);
+const [bookingDate, setbookingDate] = useState(location.state.bookingDate)
 
+const [openDate, setOpenDate] = useState(false);
+
+
+
+
+// console.log(location);
 
 
     return <>
@@ -60,28 +78,40 @@ const [showModal, setShowModal] = useState(false);
                 </div>
                   <div className="collapse show mt-10" style={showHotels ? {display:"block"} : {display:"none"}} aria-labelledby="headingOne4-d" data-parent="#filter-widget-accordion4-d">
                     <div className="card-body">
-                      <ul className="list-inline select-all mb-10">
-                        <li className="list-inline-item">4 Hotels on screen</li>
-                      </ul>
-                      <div className="table-responsive">
-                        <table className="table table-bordered bg-gray w-100 border-0">
-                            {/* <thead>
-                            </thead> */}
-                        <tbody>
-                          <tr>
-                            <td>Check In</td>
-                            <td>Jan 01, 2020 Wed</td>
-                          </tr>
-                          <tr>
-                            <td>Check Out</td>
-                            <td>Jan 01, 2020 Fri</td>
-                          </tr>
-                          <tr>
-                            <td>Room 1</td>
-                            <td>1  Adult(s)</td>
-                          </tr>
-                        </tbody>
-                        </table>
+
+                    <div className="input-section m-2">
+                          <label htmlFor="adult"><b>Destination</b></label>
+                          <select id="adult" className="modify-input p-2"> 
+                          <option>{destination}</option>
+                          </select>
+                      </div>
+
+                      <div className="input-section m-2">
+                          <label htmlFor="adult"><b>Check-in to Check-out</b></label>
+                          <div onClick={()=>setOpenDate(!openDate)} className="modify-date-input">{`${format(bookingDate[0].startDate, "dd/MM/yyyy")} to ${format(bookingDate[0].endDate, "dd/MM/yyyy")} `}</div>
+                          {openDate && <DateRange
+                          editableDateInputs={true}
+                          onChange={item => setbookingDate([item.selection])}
+                          moveRangeOnFirstSelection={false}
+                          ranges={bookingDate}
+                          className="booking-Date"
+                          minDate={new Date()}
+                      />}
+                      </div>
+
+                      <div className="input-section m-2">
+                          <label htmlFor="adult"><b>Adults</b></label>
+                          <input type="number" placeholder={adult} id="adult" className="modify-input" />
+                      </div>
+
+                      <div className="input-section m-2">
+                          <label htmlFor="children"><b>Children</b></label>
+                          <input type="number" placeholder={children} id="children" className="modify-input" />
+                      </div>
+
+                      <div className="input-section m-2">
+                          <label htmlFor="rooms"><b>Rooms</b></label>
+                          <input type="number" placeholder={rooms} id="rooms" className="modify-input" />
                       </div>
                       <button className="btn-style-1" onClick={()=>setShowModal(true)} style={{cursor:"pointer"}}><SearchIcon /> Modify Search </button>
                     </div>
@@ -120,92 +150,8 @@ const [showModal, setShowModal] = useState(false);
                 </div>
               </div>
             </div>
-            {/* <!-- filter widget end --> 
-            <!-- filter widget --> */}
-            <div className="filter-widget mb-20">
-              <div className="accordion filter-accordion" id="filter-widget-accordion2-d">
-                <div className="card">
-                  <div className="card-header" id="headingOne2-d"> <a className="btn btn-link w-100 text-left" href="" data-toggle="collapse" data-target="#collapseOne2-m" aria-expanded="true" aria-controls="collapseOne2-m"> 
-                    {/* <!-- title widget --> */}
-                    <div className="filter-title-widget">
-                      <h3>Star Rating <i className="fas fa-plus-square float-right"></i> <i className="fas fa-minus-square float-right"></i></h3>
-                    </div>
-                    {/* <!-- title widget end -->  */}
-                    </a> </div>
-                  <div id="collapseOne2-m" className="collapse show mt-10" aria-labelledby="headingOne2-d" data-parent="#filter-widget-accordion2-d">
-                    <div className="card-body">
-                      <ul className="list-inline select-all mb-10">
-                        <li className="list-inline-item"> <a href="">Select All</a> </li>
-                        <li className="list-inline-item"><a href="">Clear</a></li>
-                      </ul>
-                      <div className="filter-checkbox-widget">
-                        <div className="form-check">
-                          <input className="form-check-input" type="checkbox" />
-                          <label className="form-check-label"> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <small>(5)</small> </label>
-                        </div>
-                        <div className="form-check">
-                          <input className="form-check-input" type="checkbox" />
-                          <label className="form-check-label"> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="far fa-star"></i> <small>(4)</small> </label>
-                        </div>
-                        <div className="form-check">
-                          <input className="form-check-input" type="checkbox" />
-                          <label className="form-check-label"> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="far fa-star"></i> <i className="far fa-star"></i> <small>(3)</small> </label>
-                        </div>
-                        <div className="form-check">
-                          <input className="form-check-input" type="checkbox" />
-                          <label className="form-check-label"> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="far fa-star"></i> <i className="far fa-star"></i> <i className="far fa-star"></i> <small>(2)</small> </label>
-                        </div>
-                        <div className="form-check">
-                          <input className="form-check-input" type="checkbox" />
-                          <label className="form-check-label"> <i className="fas fa-star"></i> <i className="far fa-star"></i> <i className="far fa-star"></i> <i className="far fa-star"></i> <i className="far fa-star"></i> <small>(1)</small> </label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* <!-- filter widget end --> 
-            <!-- filter widget --> */}
-            <div className="filter-widget mb-20">
-              <div className="accordion filter-accordion" id="filter-widget-accordion3-d">
-                <div className="card">
-                  <div className="card-header" id="headingOne3-d"> <a className="btn btn-link w-100 text-left" href="" data-toggle="collapse" data-target="#collapseOne3-m" aria-expanded="true" aria-controls="collapseOne3-m"> 
-                    {/* <!-- title widget --> */}
-                    <div className="filter-title-widget">
-                      <h3>Area and Direction <i className="fas fa-plus-square float-right"></i> <i className="fas fa-minus-square float-right"></i></h3>
-                    </div>
-                    {/* <!-- title widget end -->  */}
-                    </a> </div>
-                  <div id="collapseOne3-m" className="collapse show mt-10" aria-labelledby="headingOne3-d" data-parent="#filter-widget-accordion3-d">
-                    <div className="card-body">
-                      <ul className="list-inline select-all mb-10">
-                        <li className="list-inline-item"> <a href="">Select All</a> </li>
-                        <li className="list-inline-item"><a href="">Clear</a></li>
-                      </ul>
-                      <div className="filter-checkbox-widget">
-                        <div className="form-check">
-                          <input className="form-check-input" type="checkbox" />
-                          <label className="form-check-label"> Resort <small>(2)</small> </label>
-                        </div>
-                        <div className="form-check">
-                          <input className="form-check-input" type="checkbox" />
-                          <label className="form-check-label"> West <small>(3)</small> </label>
-                        </div>
-                        <div className="form-check">
-                          <input className="form-check-input" type="checkbox" />
-                          <label className="form-check-label"> Downtown <small>(1)</small> </label>
-                        </div>
-                        <div className="form-check">
-                          <input className="form-check-input" type="checkbox" />
-                          <label className="form-check-label"> South <small>(2)</small> </label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+           
+          
             {/* <!-- filter widget end --> 
             <!-- help us --> */}
             <div className="help-us mb-30">
@@ -217,124 +163,11 @@ const [showModal, setShowModal] = useState(false);
           {/* <!-- sidebar end -->  */}
         </aside>
       </div>
-      <div className="col-lg-9"> 
-        {/* <!-- hotel results list --> */}
-        <div className="hotel-results-list"> 
-          {/* <!-- list box --> */}
-          <div className="list-box mb-30">
-            <OwlCarousel  items={1} loop autoplay={true} className="owl-carousel list-box-carousel">
-              <figure className="item"> <img src="img/listing/featured-img/img-01.jpg" alt="img description" /> </figure>
-              <figure className="item"><img src="img/listing/featured-img/img-02.jpg" alt="img description" /> </figure>
-              <figure className="item"><img src="img/listing/featured-img/img-03.jpg" alt="img description" /> </figure>
-            </OwlCarousel>
-            <div className="list-box-content">
-              <div className="list-box-title">
-                <h3>Resort Terra Paraiso <span>$240 <em>/ night</em></span></h3>
-                <address>
-                <LocationOnIcon /> Gauravaddo, Opp Lane Of Pizza Hut , Calangute, Bardez Goa
-                </address>
-              </div>
-              <div className="list-box-rating"> <span className="at-stars"> <small> <StarIcon className="starIcon" /> <StarIcon className="starIcon" /> </small></span> <em>1000 review</em> </div>
-              <ul className="hotel-featured">
-                <li><span><DirectionsCarIcon /> Parking Facility</span></li>
-                <li><span><BathtubIcon /> Attached Bathroom</span></li>
-                <li><span><HouseIcon /> Daily Housekeeping</span></li>
-                <li><span><PoolIcon /> Swimming Pool</span></li>
-              </ul>
-              <div className="btn-wrapper mt-20 d-inline-block w-100"> <a className="view-detail-btn" href="">View Details</a> <a className="book-now-btn ml-6" href="">Book Now</a> </div>
-            </div>
-          </div>
-          {/* <!-- list box end --> 
-          <!-- list box --> */}
-          <div className="list-box mb-30">
-            <OwlCarousel items={1} loop autoplay={true} className="owl-carousel list-box-carousel">
-              <figure className="item"> <img src="img/listing/featured-img/img-04.jpg" alt="img description" /> </figure>
-              <figure className="item"><img src="img/listing/featured-img/img-05.jpg" alt="img description" /> </figure>
-              <figure className="item"><img src="img/listing/featured-img/img-06.jpg" alt="img description" /> </figure>
-            </OwlCarousel>
-            <div className="list-box-content">
-              <div className="list-box-title">
-                <h3>Hotel Sunstar Grand <span>$340 <em>/ night</em></span></h3>
-                <address>
-                <i className="fas fa-map-marker-alt"></i> Gauravaddo, Opp Lane Of Pizza Hut , Calangute, Bardez Goa
-                </address>
-              </div>
-              <div className="list-box-rating"> <span className="at-stars"> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="far fa-star"></i> </span> <em>1000 review</em> </div>
-              <ul className="hotel-featured">
-                <li><span><i className="fas fa-car"></i> Parking Facility</span></li>
-                <li><span><i className="fas fa-bath"></i> Attached Bathroom</span></li>
-                <li><span><i className="fas fa-home"></i> Daily Housekeeping</span></li>
-                <li><span><i className="fas fa-swimming-pool"></i> Swimming Pool</span></li>
-              </ul>
-              <div className="btn-wrapper mt-20 d-inline-block w-100"> <a className="view-detail-btn" href="">View Details</a> <a className="book-now-btn ml-6" href="">Book Now</a> </div>
-            </div>
-          </div>
-          {/* <!-- list box end --> 
-          <!-- list box --> */}
-          <div className="list-box mb-30">
-            <OwlCarousel items={1} loop autoplay={true} className="owl-carousel list-box-carousel">
-              <figure className="item"> <img src="img/listing/featured-img/img-07.jpg" alt="img description" /> </figure>
-              <figure className="item"><img src="img/listing/featured-img/img-08.jpg" alt="img description" /> </figure>
-              <figure className="item"><img src="img/listing/featured-img/img-09.jpg" alt="img description" /> </figure>
-            </OwlCarousel>
-            <div className="list-box-content">
-              <div className="list-box-title">
-                <h3>Treebo Natraj Yes Please <span>$440 <em>/ night</em></span></h3>
-                <address>
-                <i className="fas fa-map-marker-alt"></i> Gauravaddo, Opp Lane Of Pizza Hut , Calangute, Bardez Goa
-                </address>
-              </div>
-              <div className="list-box-rating"> <span className="at-stars"> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="far fa-star"></i> </span> <em>1000 review</em> </div>
-              <ul className="hotel-featured">
-                <li><span><i className="fas fa-car"></i> Parking Facility</span></li>
-                <li><span><i className="fas fa-bath"></i> Attached Bathroom</span></li>
-                <li><span><i className="fas fa-home"></i> Daily Housekeeping</span></li>
-                <li><span><i className="fas fa-swimming-pool"></i> Swimming Pool</span></li>
-              </ul>
-              <div className="btn-wrapper mt-20 d-inline-block w-100"> <a className="view-detail-btn" href="">View Details</a> <a className="book-now-btn ml-6" href="">Book Now</a> </div>
-            </div>
-          </div>
-          {/* <!-- list box end --> 
-          <!-- list box --> */}
-          <div className="list-box mb-30">
-            <OwlCarousel items={1} loop autoplay={true} className="owl-carousel list-box-carousel">
-              <figure className="item"> <img src="img/listing/featured-img/img-01.jpg" alt="img description" /> </figure>
-              <figure className="item"><img src="img/listing/featured-img/img-02.jpg" alt="img description" /> </figure>
-              <figure className="item"><img src="img/listing/featured-img/img-03.jpg" alt="img description" /> </figure>
-            </OwlCarousel>
-            <div className="list-box-content">
-              <div className="list-box-title">
-                <h3>Wood Castle Grand <span>$540 <em>/ night</em></span></h3>
-                <address>
-                <i className="fas fa-map-marker-alt"></i> Gauravaddo, Opp Lane Of Pizza Hut , Calangute, Bardez Goa
-                </address>
-              </div>
-              <div className="list-box-rating"> <span className="at-stars"> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="fas fa-star"></i> <i className="far fa-star"></i> </span> <em>1000 review</em> </div>
-              <ul className="hotel-featured">
-                <li><span><i className="fas fa-car"></i> Parking Facility</span></li>
-                <li><span><i className="fas fa-bath"></i> Attached Bathroom</span></li>
-                <li><span><i className="fas fa-home"></i> Daily Housekeeping</span></li>
-                <li><span><i className="fas fa-swimming-pool"></i> Swimming Pool</span></li>
-              </ul>
-              <div className="btn-wrapper mt-20 d-inline-block w-100"> <a className="view-detail-btn" href="">View Details</a> <a className="book-now-btn ml-6" href="">Book Now</a> </div>
-            </div>
-          </div>
-          {/* <!-- list box end -->  */}
-        </div>
-        {/* <!-- hotel results list end --> 
-        <!-- pagination --> */}
-        <ul className="pagination pagination-box mb-30">
-          <li className="page-item"> <a className="page-link" href="#" aria-label="Previous"> <span aria-hidden="true">&laquo;</span> </a> </li>
-          <li className="page-item active"><a className="page-link" href="#">1</a></li>
-          <li className="page-item"><a className="page-link" href="#">2</a></li>
-          <li className="page-item"><a className="page-link" href="#">3</a></li>
-          <li className="page-item"> <a className="page-link" href="#" aria-label="Next"> <span aria-hidden="true">&raquo;</span> </a> </li>
-        </ul>
-        {/* <!-- pagination end -->  */}
+      <SearchList />
       </div>
-    </div>
-  </div>
-</div>
+      </div>
+      </div>
+     
 {/* <!-- ================ Listing page end ================ -->  */}
     
 
@@ -346,105 +179,7 @@ const [showModal, setShowModal] = useState(false);
 
 
 
-{/* <!-- Modify search modal --> */}
-<Modal className="modal fade" show={showModal} tabindex="-1" role="dialog" aria-labelledby="modify-search-Modal" aria-hidden="true">
-  <div className="modal-dialog modal-lg" role="document">
-    <div className="modal-content">
-      <Modal.Header className="modal-header">
-        <h5 className="modal-title" id="modify-search-Modal1">Modify Search</h5>
-        <button type="button" className="close" onClick={()=>setShowModal(false)} > <span aria-hidden="true">&times;</span> </button>
-      </Modal.Header>
-      <Modal.Body className="modal-body">
-        <form className="form-style-1">
-          <div className="row">
-            <div className="col-lg-4 col-md-6 col-sm-6 col-6 mb-1">
-              <div className="form-group">
-                <input type="text" className="form-control" placeholder="Search City" />
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-6 col-6 mb-1">
-              <div className="form-group">
-                <input type="text" className="form-control" id="check-in" placeholder="Check In" />
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-6 col-6 mb-1">
-              <div className="form-group">
-                <input type="text" className="form-control" id="check-out" placeholder="Check Out" />
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-lg-4 col-md-6 col-sm-6 col-6 mb-1">
-              <div className="form-group">
-                <input type="text" className="form-control" placeholder="Hotel" />
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-6 col-6 mb-1">
-              <div className="form-group">
-                <select className="form-control">
-                  <option>Near Area</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                </select>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-6 col-6 mb-1">
-              <div className="form-group">
-                <select className="form-control">
-                  <option>Hotel className</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-lg-4 col-md-6 col-sm-6 col-6 mb-1">
-              <div className="form-group">
-                <select className="form-control">
-                  <option>Rooms</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                </select>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-6 col-6">
-              <div className="form-group">
-                <select className="form-control">
-                  <option>Adult(s)(18+)</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                </select>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-sm-6 col-6 mb-1">
-              <div className="form-group">
-                <select className="form-control">
-                  <option>Children(0-17)</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <button className="btn-style-1 w-100">Search</button>
-        </form>
-      </Modal.Body>
-    </div>
-  </div>
-</Modal>
-{/* <!-- Modify search modal end -->  */}
-    
+
     </>;
 }
 

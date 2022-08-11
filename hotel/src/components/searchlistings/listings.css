@@ -9,7 +9,7 @@
 	background-color: #fff;
 }
 .list-box:hover {
-	border: 1px solid rgb(220, 66, 66);
+	border: 1px solid #003B65;
 }
 .list-box .list-box-content {
 	float: none;
@@ -41,7 +41,7 @@
 	margin-top: 5px;
 	font-size: 20px;
 	font-weight: 700;
-	color: rgb(220, 66, 66);
+	color: #003B65;
 }
 .list-box-title h3 span em {
 	color: #767676;
@@ -144,7 +144,7 @@
 	width: 30px;
 }
 .list-box-carousel .owl-nav .owl-prev:hover, .list-box-carousel .owl-nav .owl-next:hover {
-	background-color: rgb(220, 66, 66)!important;
+	background-color: #003B65 !important;
 	color: #fff !important;
 }
 /* filter widget */
@@ -251,7 +251,7 @@
 }
 /* help us */
 .help-us {
-	background-color: rgb(220, 66, 66);
+	background-color: #003B65;
 	padding: 25px;
 }
 .help-us h3 {
@@ -291,8 +291,8 @@
 	color: #333;
 }
 .pagination-box .page-item.active .page-link {
-	background-color: rgb(220, 66, 66);
-	border-color: rgb(220, 66, 66);
+	background-color: #003B65;
+	border-color: #003B65;
 }
 
 .listing-page a{
@@ -312,3 +312,28 @@
     }
 }
 
+
+
+.modify-input{
+	width: 100%;
+	cursor: pointer;
+	padding: 5px;
+	background-color: transparent;
+	color: #000;
+	font-size: 15px;
+	box-sizing: border-box;
+}
+.modify-date-input{
+	border: 1px solid lightgray;
+	padding: 5px;
+	font-size: 15px;
+}
+
+.booking-Date{
+	right: 30px;
+}
+
+#adult,#children,#rooms{
+	font-size: 15px;
+	border: 1px solid lightgray;
+}

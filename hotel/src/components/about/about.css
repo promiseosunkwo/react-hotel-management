@@ -4,7 +4,7 @@
 .about-col h6 {
 	font-size: 16px;
 	font-weight: 600;
-	color: rgb(220, 66, 66);
+	color: #003B65;
 	/* color: #31b675; */
 }
 
@@ -62,7 +62,7 @@
 	height: 100%;
 }
 .about-video-img-box a {
-	background-color: rgb(220, 66, 66);
+	background-color: #003B65;
 	width: 50px;
 	height: 50px;
 	-webkit-box-shadow: 0px 0px 0px 9px rgba(255, 255, 255, 0.4);

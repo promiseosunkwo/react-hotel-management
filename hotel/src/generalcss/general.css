@@ -2,11 +2,11 @@
 	01. Common
 =================================== */
 ::selection {
-	background-color: rgb(220, 66, 66);
+	background-color: #003B65;
 	color: #fff;
 }
 ::-moz-selection {
- background-color: rgb(220, 66, 66);
+ background-color: #003B65;
  color: #fff;
 }
 img {
@@ -96,7 +96,7 @@ a:hover {
 	line-height: 50px;
 	font-size: 12px;
 	color: #fff;
-	background-color: rgb(220, 66, 66);
+	background-color: #003B65;
 	text-decoration: none;
 	border-radius: 100%;
 	z-index: 9999;
@@ -104,11 +104,11 @@ a:hover {
 .scroll-top:hover {
 	color: #fff!important;
 	text-decoration: none;
-	background-color: rgb(220, 66, 66);
+	background-color: #003B65;
 }
 /* --- Buttons --- */
 .btn-style-1 {
-    background-color: rgb(220, 66, 66);
+    background-color: #003B65;
 	/* background-color: #31b675; */
 	color: #fff;
 	border: 0;
@@ -125,7 +125,7 @@ a:hover {
     
 }
 .btn-style-1:hover {
-	background-color: #660404;
+	background-color: #0d283b;
 	color: #fff;
 	text-decoration: none;
 }
@@ -147,17 +147,17 @@ a:hover {
 	background-color: #222;
 }
 .book-now-btn {
-	background-color: rgb(220, 66, 66);;
+	background-color: #003B65;
 	color: #fff;
 	padding: 8px 16px;
 	font-size: 16px;
-	border: 1px solid rgb(220, 66, 66);
+	border: 1px solid #003B65;
 	display: inline-block;
 	font-weight: 600;
 }
 .book-now-btn:hover {
 	background-color: #fff;
-	color: rgb(220, 66, 66);;
+	color: #003B65;
 }
 /* --- Loading --- */
 #preloader {
@@ -195,7 +195,7 @@ a:hover {
 .section-title span.dashed-border:before, .section-title span.dashed-border:after {
 	font-size: 10px;
 	content: "";
-	background-color: rgb(220, 66, 66);;
+	background-color: #003B65;
 	width: 10px;
 	height: 10px;
 	position: absolute;
@@ -208,3 +208,6 @@ a:hover {
 .section-title span.dashed-border:after {
 	right: -20px;
 }
+
+
+/* previous color rgb(220, 66, 66); */
